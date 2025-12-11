@@ -1,6 +1,4 @@
 using ConsoleTemplate.Extensions;
-using Microsoft.Extensions.Configuration;
-using Spectre.Console;
 
 namespace ConsoleTemplate;
 

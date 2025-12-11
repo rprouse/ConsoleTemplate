@@ -1,4 +1,13 @@
 <Solution>
+  <Folder Name="/.github/">
+    <File Path=".github/copilot-instructions.md" />
+    <File Path=".github/dependabot.yml" />
+    <File Path=".github/pull_request_template.md" />
+  </Folder>
+  <Folder Name="/.github/workflows/">
+    <File Path=".github/workflows/docker-build-push.yml" />
+    <File Path=".github/workflows/dotnet-build-test.yml" />
+  </Folder>
   <Folder Name="/Solution Items/">
     <File Path=".dockerignore" />
     <File Path=".editorconfig" />

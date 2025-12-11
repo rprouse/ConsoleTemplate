@@ -1,0 +1,62 @@
+﻿name: 🏗️ .NET Build and Test
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+  workflow_dispatch:
+
+env:
+  DOTNET_VERSION: '10.0.x'
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v6
+
+      - name: 🔧 Setup .NET
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: 🔄 Restore dependencies
+        run: dotnet restore
+
+      - name: 🏗️ Build solution
+        run: dotnet build --no-restore --configuration Release /p:TreatWarningsAsErrors=true
+
+      - name: 🧪 Run tests
+        run: dotnet test --no-build --configuration Release --verbosity normal --logger "trx;LogFileName=test-results.trx" --collect:"XPlat Code Coverage"
+
+      - name: 📤 Upload test results
+        if: always()
+        uses: actions/upload-artifact@v5
+        with:
+          name: test-results
+          path: '**/TestResults/**/*.trx'
+
+      - name: 📦 Upload code coverage
+        if: always()
+        uses: actions/upload-artifact@v5
+        with:
+          name: code-coverage
+          path: '**/TestResults/**/coverage.cobertura.xml'
+
+      - name: 📊 Test Report
+        uses: dorny/test-reporter@v2
+        if: always()
+        with:
+          name: .NET Tests
+          path: '**/TestResults/**/*.trx'
+          reporter: dotnet-trx
+          fail-on-error: true

@@ -1,4 +1,3 @@
-using Microsoft.Extensions.Configuration;
 using ConsoleTemplate.Exceptions;
 
 namespace ConsoleTemplate.Extensions;

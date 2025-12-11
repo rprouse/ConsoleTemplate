@@ -1,8 +1,5 @@
 using ConsoleTemplate;
 using ConsoleTemplate.Exceptions;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Spectre.Console;
 
 try
 {

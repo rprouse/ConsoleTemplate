@@ -1,6 +1,3 @@
-using Microsoft.Extensions.DependencyInjection;
-using Spectre.Console;
-
 namespace ConsoleTemplate;
 
 internal static class DependencyInjection

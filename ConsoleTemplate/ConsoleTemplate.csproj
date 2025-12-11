@@ -8,6 +8,14 @@
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     </PropertyGroup>
 
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+      <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+      <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+    </PropertyGroup>
+
     <ItemGroup>
         <PackageReference Include="Google.Cloud.Storage.V1" Version="4.13.0" />
         <PackageReference Include="Microsoft.Extensions.Configuration" Version="10.0.1" />
