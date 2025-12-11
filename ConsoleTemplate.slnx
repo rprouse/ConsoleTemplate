@@ -13,7 +13,7 @@
     <File Path=".editorconfig" />
     <File Path=".gitattributes" />
     <File Path=".gitignore" />
-    <File Path="LICENSE.txt" />
+    <File Path="LICENSE" />
     <File Path="README.md" />
   </Folder>
   <Project Path="ConsoleTemplate.Tests/ConsoleTemplate.Tests.csproj" />
