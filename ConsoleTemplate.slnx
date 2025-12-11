@@ -1,10 +1,12 @@
 <Solution>
   <Folder Name="/Solution Items/">
     <File Path=".dockerignore" />
+    <File Path=".editorconfig" />
     <File Path=".gitattributes" />
     <File Path=".gitignore" />
     <File Path="LICENSE.txt" />
     <File Path="README.md" />
   </Folder>
+  <Project Path="ConsoleTemplate.Tests/ConsoleTemplate.Tests.csproj" />
   <Project Path="ConsoleTemplate/ConsoleTemplate.csproj" />
 </Solution>
