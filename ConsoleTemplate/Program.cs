@@ -28,6 +28,6 @@ catch (ConfigurationException ex)
 }
 catch (Exception ex)
 {
-    AnsiConsole.Markup($"[red]Error:[/] {ex.Message}");
+    AnsiConsole.WriteException(ex, ExceptionFormats.ShortenEverything);
     return await Task.FromResult(1);
 }
